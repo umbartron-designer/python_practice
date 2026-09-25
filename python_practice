@@ -1,4 +1,41 @@
 # password improver # 
 
+import random
 
+def number_check(password): 
+    for char in password: 
+        if char.isdigit():
+            return True
+    return False 
+
+def special_char_check(password): 
+    for char in password: 
+        if not char.isdigit() and not char.isalpha():
+            return True
+    return False 
+
+def length_check(password): 
+    if len(password) >= 8: 
+        return True
+    return False 
+
+print("Password Improver") 
+
+while True: 
+    password = input("Enter your password: ") 
+    if number_check(password) and special_char_check(password) and length_check(password):
+        print("Password is strong!") 
+        break
+    elif not number_check(password):
+        print("Password must contain at least one number.") 
+    elif not special_char_check(password):
+        print("Password must contain at least one special character.") 
+    elif not length_check(password):
+        print("Password must be at least 8 characters long.") 
+        print("Password is weak. Please improve it. \n") 
+    
+    
+
+    
+   
 
